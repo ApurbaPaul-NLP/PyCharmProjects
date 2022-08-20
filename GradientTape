@@ -1,3 +1,8 @@
+'''TensorFlow provides the tf.GradientTape API for automatic differentiation;
+that is, computing the gradient of a computation with respect to some inputs, usually tf.Variables. 
+TensorFlow "records" relevant operations executed inside the context of a tf.GradientTape onto a "tape". 
+TensorFlow then uses that tape to compute the gradients of a "recorded" computation using reverse mode differentiation.
+'''
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
