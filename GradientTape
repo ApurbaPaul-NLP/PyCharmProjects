@@ -1,0 +1,20 @@
+import tensorflow as tf
+import numpy as np
+import matplotlib.pyplot as plt
+# x = tf.constant(3.0)
+# with tf.GradientTape() as g:
+#   g.watch(x)
+#   y = x * x
+# dy_dx = g.gradient(y, x)
+# print(dy_dx.numpy())
+x = tf.constant(5.0)
+with tf.GradientTape() as g:
+  g.watch(x)
+  with tf.GradientTape() as gg:
+    gg.watch(x)
+    y = x * x
+  dy_dx = gg.gradient(y, x)  # dy_dx = 2 * x
+d2y_dx2 = g.gradient(dy_dx, x)  # d2y_dx2 = 2
+print(dy_dx.numpy())
+
+print(d2y_dx2.numpy())
